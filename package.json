@@ -1,0 +1,14 @@
+{
+  "name": "vidjot",
+  "version": "1.0.0",
+  "description": "App to list video ideas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nirmoho",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
