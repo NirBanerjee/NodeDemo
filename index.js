@@ -23,7 +23,10 @@ app.get('/', (request, response) => {
 
 //About Route
 app.get('/about', (request, response) => {
-	response.send("About Hello ")
+	const title  = 'Hello Page';
+	response.render('hello', {
+		title: title
+	});
 })
 
 app.listen(port, () => {
