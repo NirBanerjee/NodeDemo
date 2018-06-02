@@ -1,7 +1,16 @@
 const express = require('express');
 const app = express();
-const port = 3130
+const port = 3130;
 const exphbs = require('express-handlebars');
+const mongoose = require('mongoose');
+
+//Map global promise - get rid of warning
+mongoose.Promise = global.Promise
+
+//MongoDB and Mongoose Connections
+mongoose.connect('mongodb://localhost/vidjot-dev')
+.then(() => console.log('MongoDB Connected....'))
+.catch(err => console.log(err));
 
 //HandleBars Middleware
 app.engine('handlebars', exphbs({
@@ -24,7 +33,7 @@ app.get('/', (request, response) => {
 //About Route
 app.get('/about', (request, response) => {
 	const title  = 'Hello Page';
-	response.render('hello', {
+	response.render('about', {
 		title: title
 	});
 })
